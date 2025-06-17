@@ -3,7 +3,7 @@ import { Customer } from 'src/domain/entities/customer.entity';
 import { Product } from 'src/domain/entities/product.entity';
 import { CustomerRepositoryInterface } from 'src/domain/repositorys/customer.repository.interface';
 import { ProductRepositoryInterface } from 'src/domain/repositorys/product.repository.interface';
-import { ProductEntity } from 'src/infra/database/models/typeorm/product.model';
+import { ProductEntity } from 'src/infra/database/entities/typeorm/product.entity';
 import { CreateProductDto } from 'src/presentation/dto/create-product.dto';
 
 export class CreateProductUseCase {

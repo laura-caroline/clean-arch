@@ -16,15 +16,15 @@ export class Customer {
     return this.id;
   }
   get name(): string {
-    return this.name;
+    return this._name;
   }
 
   get active(): boolean {
-    return this.active;
+    return this._active;
   }
 
   get products(): Product[] {
-    return this.products;
+    return this._products;
   }
   changeStatusCustomer(active: boolean): void {
     this._active = active;

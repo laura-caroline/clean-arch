@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CustomerRepositoryInterface } from 'src/domain/repositorys/customer.repository.interface';
 import { Customer } from 'src/domain/entities/customer.entity';
-import { CustomerEntity } from '../../models/typeorm/customer.model';
+import { CustomerEntity } from '../../entities/typeorm/customer.entity';
 
 @Injectable()
 export class CustomerRepository implements CustomerRepositoryInterface {
@@ -16,13 +16,6 @@ export class CustomerRepository implements CustomerRepositoryInterface {
     const customerCreate = await this.customerRepository.create({
       name: customer.name,
       active: customer.active,
-      products: customer.products.map((product) => ({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        active: product.active,
-        customer: { id: customer.id },
-      })),
     });
     const saved = await this.customerRepository.save(customerCreate);
     return saved;

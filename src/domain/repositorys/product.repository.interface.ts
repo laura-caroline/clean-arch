@@ -1,4 +1,4 @@
-import { ProductEntity } from 'src/infra/database/models/typeorm/product.model';
+import { ProductEntity } from 'src/infra/database/entities/typeorm/product.entity';
 import { Product } from '../entities/product.entity';
 
 export interface ProductRepositoryInterface {
